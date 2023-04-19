@@ -29,6 +29,7 @@ public class enemymove : MonoBehaviour
         if (Vector3.Distance(transform.position, player.position) < enemyDistance)
         {
             gameObject.GetComponent<NavMeshAgent>().velocity = Vector3.zero;
+            // gameObject.GetComponent<Animator>().Play("attack");
         }
     }
 }
