@@ -11,7 +11,7 @@ public class BasicEnemy : MonoBehaviour
     public float attackDelay;
     public float attackRate;
     public float attackDistance;
-    
+
     public Transform playerObject;
     // Start is called before the first frame update
     void Start()
@@ -23,10 +23,10 @@ public class BasicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > attackDelay)
+        if (Time.time > attackDelay)
         {
             navAgent.destination = playerObject.position;
-            if(Vector3.Distance(playerObject.position, transform.position) <= attackDistance)
+            if (Vector3.Distance(playerObject.position, transform.position) <= attackDistance)
             {
                 playerObject.GetComponent<PlayerHealth>().playerHealth -= damageAmount;
                 attackDelay = Time.time + attackRate;
@@ -34,7 +34,7 @@ public class BasicEnemy : MonoBehaviour
         }
         else
         {
-             nav.destination = transform.position;
+            navAgent.destination = transform.position;
         }
     }
 }
