@@ -34,9 +34,9 @@ public class BulletParticle : MonoBehaviour
             Instantiate(spark, colEvents[i].intersection, Quaternion.LookRotation(colEvents[i].normal));
         }
 
-        if (other.transform.root.TryGetComponent(out Enemy en))
-        {
-            en.TakeDamage(damage);
-        }
+        //if (other.transform.root.TryGetComponent(out BasicEnemy en))
+       // {
+        //    en.TakeDamage(damage);
+        //}
     }
 }
