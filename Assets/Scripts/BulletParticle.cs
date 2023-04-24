@@ -22,7 +22,7 @@ public class BulletParticle : MonoBehaviour
             particleSystem.Play();
         }
     }
-
+    
     private void OnParticleCollision(GameObject other)
     {
         int events = particleSystem.GetCollisionEvents(other, colEvents);
@@ -34,9 +34,9 @@ public class BulletParticle : MonoBehaviour
             Instantiate(spark, colEvents[i].intersection, Quaternion.LookRotation(colEvents[i].normal));
         }
 
-        //if (other.transform.root.TryGetComponent(out BasicEnemy en))
-       // {
-        //    en.TakeDamage(damage);
-        //}
+        if (other.transform.root.TryGetComponent(out Target enemyTarget))
+       {
+           enemyTarget.TakeDamage(damage);
+        }
     }
 }
