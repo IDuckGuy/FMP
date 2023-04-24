@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class BulletParticle : MonoBehaviour
 {
     public float damage = 50f;
@@ -22,7 +22,7 @@ public class BulletParticle : MonoBehaviour
             particleSystem.Play();
         }
     }
-    
+
     private void OnParticleCollision(GameObject other)
     {
         int events = particleSystem.GetCollisionEvents(other, colEvents);
@@ -40,3 +40,4 @@ public class BulletParticle : MonoBehaviour
         }
     }
 }
+*/
