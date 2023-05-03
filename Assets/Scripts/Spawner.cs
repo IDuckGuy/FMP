@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public Transform Obj;
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(Timer());
-    }
+    [SerializeField] private GameObject[] bosses;
+    private int currentEnemy = 0;
 
     // Update is called once per frame
-    void Update()
+    private void Update() => Spawn();
+
+    private void Spawn()
     {
-        
-    }
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(3);
-        Instantiate(Obj, transform.position, transform.rotation);
-        StartCoroutine(Timer());
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length != 0) return;
+
+        if (currentEnemy >= bosses.Length) currentEnemy = 0;
+        Instantiate(bosses[currentEnemy], transform.position, transform.rotation);
+        currentEnemy++;
     }
 }

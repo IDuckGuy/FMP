@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))] // Require all prefabs with this script to have a nav mesh agent
 public class BasicEnemy : MonoBehaviour
 {
     private NavMeshAgent navAgent;
