@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     Rigidbody rb;
     public float bulletSpeed;
 
+    [SerializeField] private float DamageAmount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,12 @@ public class Bullet : MonoBehaviour
         // Check if enemy
         if (collision.gameObject.CompareTag("Enemy")) {
             Debug.Log("Enemy hit!");
-            Destroy(collision.gameObject);
+            // Destroy(collision.gameObject);
+
+            // Get health component and deal damage
+            var health = GetComponent<Target>();
+            if (health != null)
+                health.TakeDamage(DamageAmount);
         }
     }
 }
