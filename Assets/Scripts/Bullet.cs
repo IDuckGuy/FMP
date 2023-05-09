@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         rb.AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision )
     {
         // Check if enemy
         if (collision.gameObject.CompareTag("Enemy")) {
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
             // Destroy(collision.gameObject);
 
             // Get health component and deal damage
-            var health = GetComponent<Target>();
+            var health = collision.gameObject.GetComponent<Target>();
             if (health != null)
                 health.TakeDamage(DamageAmount);
         }
