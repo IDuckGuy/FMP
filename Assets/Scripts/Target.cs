@@ -5,7 +5,7 @@ public class Target : MonoBehaviour
     public float health = 100f;
     GameObject enemySpawnObject;
 
-    public void TakeDamage(float amount, bool instaKill = true)
+    public void TakeDamage(float amount, bool instaKill = false)
     {
         health -= amount;
 

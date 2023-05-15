@@ -22,12 +22,13 @@ public class Bullet : MonoBehaviour
         // Check if enemy
         if (collision.gameObject.CompareTag("Enemy")) {
             Debug.Log("Enemy hit!");
-            // Destroy(collision.gameObject);
 
             // Get health component and deal damage
             var health = collision.gameObject.GetComponent<Target>();
             if (health != null)
                 health.TakeDamage(DamageAmount);
+
+            Destroy(this);
         }
     }
 }
