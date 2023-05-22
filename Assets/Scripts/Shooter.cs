@@ -22,10 +22,6 @@ public class Shooter : MonoBehaviour
         {
             Shoot();
         }
-        else if (Input.GetMouseButton(2))
-        {
-            Shoot();
-        }
 
         // Rotate the firepoint with the main camera
         Quaternion cameraRotation = Camera.main.transform.rotation;
